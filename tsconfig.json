@@ -1,0 +1,9 @@
+{
+  // https://v3.nuxtjs.org/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es2016",
+    "lib": ["DOM", "ESNext"]
+  }
+}
