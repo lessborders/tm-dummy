@@ -24,6 +24,7 @@ export const useCartStore = defineStore('cart', {
       },
       payment: 1,
       delivery: 1,
+      order: null,
     },
   }),
   actions: {
@@ -45,8 +46,13 @@ export const useCartStore = defineStore('cart', {
     },
 
     saveCart() {
-      console.log('Hello')
       localStorage.setItem(cartName, JSON.stringify(this.cart))
+    },
+
+    async submitCart() {
+      this.cart.order = { ...this.cart }
+      this.cart.items = []
+      this.saveCart()
     },
   },
 })

@@ -3,6 +3,7 @@
     <div class="event-img zoom-img ratio ratio-1x1">
       <div class="img"></div>
       <button
+        v-if="!props.isOverview"
         class="btn d-flex justify-content-center align-items-center bg-glass show-on-hover delete"
         @click="cart.deleteCartItem(cartItem.id)"
       >
@@ -51,6 +52,7 @@ const cart = computed(() => useCartStore())
 
 interface Props {
   cartItem: Models.CartItem | null
+  isOverview: boolean
 }
 
 const props = defineProps<Props>()

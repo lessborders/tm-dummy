@@ -10,9 +10,7 @@
         <button class="btn d-none d-md-block">
           <i class="fa-regular fa-comment" /> <a href="#">EN</a> | DE
         </button>
-        <NuxtLink class="btn" to="/user">
-          <i class="fa-solid fa-user"></i>
-        </NuxtLink>
+        <button v-if="cart?.items.length" class="btn"><small>09:59</small></button>
         <button
           class="btn"
           type="button"

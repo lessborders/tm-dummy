@@ -51,6 +51,7 @@ export interface Cart {
   details: Customer
   payment: number
   delivery: number
+  order: Cart | null
 }
 
 export interface StoreCart {

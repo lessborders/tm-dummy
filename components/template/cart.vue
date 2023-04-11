@@ -11,7 +11,12 @@
     </div>
     <div class="offcanvas-body">
       <TransitionGroup name="list" tag="ul" class="list-group list-group-flush">
-        <CartItem v-for="cartItem in cart.items" :key="cartItem.id" :cartItem="cartItem" />
+        <CartItem
+          v-for="cartItem in cart.items"
+          :key="cartItem.id"
+          :cartItem="cartItem"
+          :isOverview="false"
+        />
       </TransitionGroup>
     </div>
     <div class="offcanvas-footer">
@@ -24,7 +29,9 @@
         data-bs-target="#offcanvasCart"
         aria-controls="offcanvasCart"
       >
-        <NuxtLink to="/checkout" class="btn btn-primary"> Zur Kasse </NuxtLink>
+        <NuxtLink v-if="cart.items?.length" to="/checkout" class="btn btn-primary">
+          Zur Kasse
+        </NuxtLink>
       </div>
     </div>
   </div>

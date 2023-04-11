@@ -1,26 +1,24 @@
 <template>
-  <h5 class="card-title">Wie möchten Sie bezahlen?</h5>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Wie möchten Sie bezahlen?</h5>
 
-  <div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        value="1"
-        id="paymentPaypal"
-        v-model="cart.payment"
-      />
-      <label class="form-check-label" for="paymentPaypal">Paypal <small>(+ 0,00 €)</small></label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        value="2"
-        id="paymentCreditCard"
-        v-model="cart.payment"
-      />
-      <label class="form-check-label" for="paymentCreditCard"> Kreditkarte</label>
+      <div>
+        <label class="custom-check">
+          <input type="radio" value="1" id="paymentPaypal" v-model="cart.payment" />
+          <span>
+            <i class="fa-brands fa-paypal" />
+            <div>Paypal <small>(+ 0,00 €)</small></div>
+          </span>
+        </label>
+        <label class="custom-check">
+          <input type="radio" value="2" id="paymentCreditCard" v-model="cart.payment" />
+          <span>
+            <i class="fa-brands fa-cc-visa" />
+            <div>Kreditkarte</div>
+          </span>
+        </label>
+      </div>
     </div>
   </div>
 </template>
